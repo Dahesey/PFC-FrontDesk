@@ -192,10 +192,11 @@ section {
     position: relative;
     z-index: 1;
     padding: 20px;
+    align-items: stretch;
 }
 
 /* Update card and message box styles for glassmorphism */
-.card{
+.card {
     flex: 1;
     height: 100%;
     display: flex;
@@ -208,18 +209,19 @@ section {
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     overflow: hidden;
     will-change: transform;
+    min-height: 500px;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
 }
 
 .card:hover {
     transform: translateY(-10px) scale(1.02);
     box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.45);
-}
-
-.card img {
-    width: 100%;
-    height: 80%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
 }
 
 .card:hover img {
@@ -730,15 +732,56 @@ section {
         flex-direction: column;
         padding: 20px;
         margin-top: 70px;
+        gap: 20px;
     }
 
     .card {
         width: 100%;
         margin-bottom: 20px;
+        min-height: 400px;
+        max-height: 400px;
+    }
+
+    .card img {
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
     }
 
     .message-box {
         padding: 20px;
+        font-size: 1rem;
+    }
+
+    .message-box .heading h1 {
+        font-size: 1.8rem;
+        margin-bottom: 10px;
+    }
+
+    .message-box .text h3 {
+        font-size: 1.2rem;
+    }
+
+    .potter-creed {
+        gap: 10px;
+    }
+
+    .creed-line {
+        font-size: 1rem;
+        line-height: 1.4;
+    }
+
+    /* Adjust spacing for mobile */
+    .card .info {
+        padding: 15px;
+    }
+
+    .card .info h2 {
+        font-size: 1.2rem;
+    }
+
+    .card .info p {
+        font-size: 1rem;
     }
 
     /* Event Container Mobile */
@@ -866,7 +909,7 @@ footer {
     padding: 20px;
     background: #333;
     color: white;
-    position: fixed;
+    position: relative;
     bottom: 0;
     left: 0;
     width: 100%;
