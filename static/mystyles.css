@@ -780,11 +780,13 @@ section {
 
     /* Potter's Creed Mobile Styles */
     .potter-creed {
-        gap: 12px;
+        gap: 15px;
         margin-top: 10px;
         width: 100%;
         overflow-x: hidden;
         padding: 0 10px;
+        display: flex;
+        flex-direction: column;
     }
 
     .creed-line {
@@ -800,6 +802,8 @@ section {
         hyphens: auto;
         display: block;
         clear: both;
+        position: relative;
+        box-sizing: border-box;
     }
 
     /* Fix for iOS devices */
@@ -809,6 +813,8 @@ section {
             hyphens: auto;
             -webkit-line-break: normal;
             line-break: normal;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
         }
     }
 
