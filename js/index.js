@@ -241,11 +241,18 @@ document.addEventListener('DOMContentLoaded', function() {
     const navMenu = document.querySelector('nav ul');
     
     if (menuToggle && navMenu) {
-        menuToggle.addEventListener('click', function() {
-            navMenu.classList.toggle('active');
+        // Initially hide the menu on mobile
+        if (window.innerWidth <= 768) {
+            navMenu.style.display = 'none';
+        }
+
+        menuToggle.addEventListener('click', function(e) {
+            e.stopPropagation(); // Prevent event from bubbling up
+            navMenu.style.display = navMenu.style.display === 'none' ? 'flex' : 'none';
+            
             // Change icon based on menu state
             const icon = this.querySelector('i');
-            if (navMenu.classList.contains('active')) {
+            if (navMenu.style.display === 'flex') {
                 icon.classList.remove('fa-bars');
                 icon.classList.add('fa-times');
             } else {
@@ -257,21 +264,37 @@ document.addEventListener('DOMContentLoaded', function() {
         // Close menu when clicking outside
         document.addEventListener('click', function(event) {
             if (!event.target.closest('nav')) {
-                navMenu.classList.remove('active');
-                const icon = menuToggle.querySelector('i');
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
+                if (window.innerWidth <= 768) {
+                    navMenu.style.display = 'none';
+                    const icon = menuToggle.querySelector('i');
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
             }
         });
 
         // Close menu when clicking a link
         navMenu.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', function() {
-                navMenu.classList.remove('active');
+                if (window.innerWidth <= 768) {
+                    navMenu.style.display = 'none';
+                    const icon = menuToggle.querySelector('i');
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            });
+        });
+
+        // Handle window resize
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 768) {
+                navMenu.style.display = 'flex';
+            } else {
+                navMenu.style.display = 'none';
                 const icon = menuToggle.querySelector('i');
                 icon.classList.remove('fa-times');
                 icon.classList.add('fa-bars');
-            });
+            }
         });
     }
 });
