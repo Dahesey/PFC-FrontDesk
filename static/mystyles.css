@@ -685,21 +685,28 @@ section {
         padding: 10px;
         position: fixed;
         top: 0;
+        left: 0;
         width: 100%;
         background: rgba(51, 51, 51, 0.95);
         backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        z-index: 1000;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
 
     nav ul {
         display: none;
         position: absolute;
-        top: 70px;
+        top: 60px;
         left: 0;
         width: 100%;
         background: rgba(51, 51, 51, 0.95);
         flex-direction: column;
         padding: 20px 0;
         margin: 0;
+        z-index: 1000;
     }
 
     nav ul.active {
@@ -710,32 +717,35 @@ section {
         padding: 15px 20px;
         display: block;
         text-align: center;
+        color: white;
     }
 
     .header-logo {
         height: 40px;
         width: 40px;
+        margin: 0;
     }
 
     /* Mobile Menu Button */
     .menu-toggle {
         display: block;
-        position: absolute;
-        right: 20px;
-        top: 20px;
+        position: relative;
+        right: 0;
+        top: 0;
         background: none;
         border: none;
         color: white;
         font-size: 24px;
         cursor: pointer;
-        z-index: 1000;
+        z-index: 1001;
+        padding: 10px;
     }
 
     /* Home Container Mobile */
     .home-container {
         flex-direction: column;
         padding: 20px;
-        margin-top: 70px;
+        margin-top: 60px;
         gap: 20px;
     }
 
@@ -756,6 +766,7 @@ section {
         padding: 15px;
         font-size: 1rem;
         width: 100%;
+        overflow-x: hidden;
     }
 
     .message-box .heading h1 {
@@ -772,6 +783,7 @@ section {
         gap: 8px;
         margin-top: 10px;
         width: 100%;
+        overflow-x: hidden;
     }
 
     .creed-line {
@@ -780,9 +792,11 @@ section {
         padding: 0;
         margin: 0;
         width: 100%;
-        word-break: normal;
+        word-break: break-word;
         white-space: normal;
         text-align: left;
+        overflow-wrap: break-word;
+        hyphens: auto;
     }
 
     /* Adjust spacing for mobile */
@@ -796,6 +810,24 @@ section {
 
     .card .info p {
         font-size: 1rem;
+    }
+
+    /* Fix for iOS devices */
+    @supports (-webkit-touch-callout: none) {
+        nav {
+            position: fixed;
+            -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+        }
+
+        .message-box {
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .creed-line {
+            -webkit-hyphens: auto;
+            hyphens: auto;
+        }
     }
 
     /* Event Container Mobile */
