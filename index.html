@@ -10,18 +10,26 @@
     <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self' 'unsafe-inline' https://www.google.com https://www.gstatic.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; img-src 'self' data: https:; font-src 'self' https://cdnjs.cloudflare.com;">
     <meta name="robots" content="index, follow">
     <meta name="description" content="Welcome to Potters Family Chapel Frontdesk - Your gateway to spiritual growth and community">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="static/mystyles.css" as="style">
+    <link rel="preload" href="js/index.js" as="script">
+    <link rel="preload" href="static/Images/pfc-logo.png" as="image">
+    <link rel="preload" href="static/Images/Daddy-Pic_New.jpg" as="image">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" as="style">
+    
     <title>PFC FRONTDESK</title>
     <link rel="stylesheet" href="static/mystyles.css">
     <link rel="icon" type="image/png" href="static/Images/pfc-logo.png"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/index.js" defer></script>
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
     
     <header>
         <nav>
-            <img class="header-logo" src="static/Images/pfc-logo.png" alt="Potters Family Chapel Logo">
+            <img class="header-logo" src="static/Images/pfc-logo.png" alt="Potters Family Chapel Logo" width="50" height="50" loading="eager">
             <button class="menu-toggle" aria-label="Toggle navigation menu">
                 <i class="fas fa-bars"></i>
             </button>
@@ -38,7 +46,7 @@
             <!-- <img class="background-image" src="static/Images/pfc-logo.png" alt="Pfc-logo"> -->
             <div class="home-container">
                 <div class="card">
-                    <img src="static/Images/Daddy-Pic_New.jpg" alt="General Overseer welcoming visitors">
+                    <img src="static/Images/Daddy-Pic_New.jpg" alt="General Overseer welcoming visitors" width="400" height="600" loading="eager">
                     <div class="info">
                         <h2>Prophet Alex Armstrong</h2>
                         <p>General Overseer</p>
@@ -153,42 +161,42 @@
             </div>
             <div class="slideshow-container">
                 <div class="slides fade">
-                    <img src="static/Images/pfc-fc5.JPG" alt="Host Team">
+                    <img src="static/Images/pfc-fc5.JPG" alt="Host Team" width="1500" height="800" loading="lazy">
                     <div class="slide-caption">Host Team</div>
                 </div>
                 
                 <div class="slides fade">
-                    <img src="static/Images/pfc-fd1.JPG" alt="Ushering">
+                    <img src="static/Images/pfc-fd1.JPG" alt="Ushering" width="1500" height="800" loading="lazy">
                     <div class="slide-caption">Ushering Department</div>
                 </div>
                 
                 <div class="slides fade">
-                    <img src="static/Images/pfc-fd2.JPG" alt="Protocol">
+                    <img src="static/Images/pfc-fd2.JPG" alt="Protocol" width="1500" height="800" loading="lazy">
                     <div class="slide-caption">Protocol Department</div>
                 </div>
 
                 <div class="slides fade">
-                    <img src="static/Images/pfc-fd4.JPG" alt="Prayer">
+                    <img src="static/Images/pfc-fd4.JPG" alt="Prayer" width="1500" height="800" loading="lazy">
                     <div class="slide-caption">Prayer Department</div>
                 </div>
 
                 <div class="slides fade">
-                    <img src="static/Images/pfc-fd3.JPG" alt="Music">
+                    <img src="static/Images/pfc-fd3.JPG" alt="Music" width="1500" height="800" loading="lazy">
                     <div class="slide-caption">Music Department</div>
                 </div>
 
                 <div class="slides fade">
-                    <img src="static/Images/pfc-fd6.JPG" alt="Evangelism">
+                    <img src="static/Images/pfc-fd6.JPG" alt="Evangelism" width="1500" height="800" loading="lazy">
                     <div class="slide-caption">Evangelism Department</div>
                 </div>
 
                 <div class="slides fade">
-                    <img src="static/Images/pfc-fd7.JPG" alt="I-Team">
+                    <img src="static/Images/pfc-fd7.JPG" alt="I-Team" width="1500" height="800" loading="lazy">
                     <div class="slide-caption">I-Team</div>
                 </div>
 
                 <div class="slides fade">
-                    <img src="static/Images/pfc-fd9.jpg" alt="Welfare">
+                    <img src="static/Images/pfc-fd9.jpg" alt="Welfare" width="1500" height="800" loading="lazy">
                     <div class="slide-caption">Welfare Department</div>
                 </div>
         

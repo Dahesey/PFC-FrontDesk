@@ -3,6 +3,8 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    transition-duration: 0.3s;
+    transition-timing-function: ease;
 }
 
 html {
@@ -157,6 +159,8 @@ nav a:hover::before {
     -webkit-tap-highlight-color: transparent;
     position: relative;
     left: 0;
+    will-change: transform;
+    backface-visibility: hidden;
 }
 
 .creed-list li:hover,
@@ -285,6 +289,7 @@ section {
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     overflow: hidden;
     will-change: transform;
+    contain: layout style paint;
     min-height: 500px;
 }
 
@@ -293,6 +298,8 @@ section {
     height: 100%;
     object-fit: cover;
     transition: transform 0.5s ease;
+    content-visibility: auto;
+    contain: size layout paint;
 }
 
 .card:hover {
@@ -578,6 +585,8 @@ section {
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
     overflow: hidden;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+    contain: layout style paint;
 }
 
 /* Slides */
@@ -611,6 +620,8 @@ section {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    content-visibility: auto;
+    contain: size layout paint;
 }
 
 .slide-caption {
@@ -1403,4 +1414,17 @@ input:focus {
 
 .newsletter-form input:focus:valid {
     box-shadow: 0 0 0 3px rgba(40, 167, 69, 0.1);
+}
+
+/* Add preload for critical resources */
+.preload {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
 }
