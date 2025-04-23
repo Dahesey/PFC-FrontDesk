@@ -794,7 +794,7 @@ section {
 
     nav ul {
         display: none;
-        position: absolute;
+        position: fixed;
         top: 60px;
         left: 0;
         width: 100%;
@@ -806,7 +806,7 @@ section {
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
 
-    nav ul.active {
+    nav ul.show {
         display: flex;
     }
 

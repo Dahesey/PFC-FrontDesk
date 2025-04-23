@@ -243,16 +243,16 @@ document.addEventListener('DOMContentLoaded', function() {
     if (menuToggle && navMenu) {
         // Initially hide the menu on mobile
         if (window.innerWidth <= 768) {
-            navMenu.style.display = 'none';
+            navMenu.classList.remove('show');
         }
 
         menuToggle.addEventListener('click', function(e) {
             e.stopPropagation(); // Prevent event from bubbling up
-            navMenu.style.display = navMenu.style.display === 'none' ? 'flex' : 'none';
+            navMenu.classList.toggle('show');
             
             // Change icon based on menu state
             const icon = this.querySelector('i');
-            if (navMenu.style.display === 'flex') {
+            if (navMenu.classList.contains('show')) {
                 icon.classList.remove('fa-bars');
                 icon.classList.add('fa-times');
             } else {
@@ -265,7 +265,7 @@ document.addEventListener('DOMContentLoaded', function() {
         document.addEventListener('click', function(event) {
             if (!event.target.closest('nav')) {
                 if (window.innerWidth <= 768) {
-                    navMenu.style.display = 'none';
+                    navMenu.classList.remove('show');
                     const icon = menuToggle.querySelector('i');
                     icon.classList.remove('fa-times');
                     icon.classList.add('fa-bars');
@@ -277,7 +277,7 @@ document.addEventListener('DOMContentLoaded', function() {
         navMenu.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', function() {
                 if (window.innerWidth <= 768) {
-                    navMenu.style.display = 'none';
+                    navMenu.classList.remove('show');
                     const icon = menuToggle.querySelector('i');
                     icon.classList.remove('fa-times');
                     icon.classList.add('fa-bars');
@@ -288,9 +288,9 @@ document.addEventListener('DOMContentLoaded', function() {
         // Handle window resize
         window.addEventListener('resize', function() {
             if (window.innerWidth > 768) {
-                navMenu.style.display = 'flex';
+                navMenu.classList.add('show');
             } else {
-                navMenu.style.display = 'none';
+                navMenu.classList.remove('show');
                 const icon = menuToggle.querySelector('i');
                 icon.classList.remove('fa-times');
                 icon.classList.add('fa-bars');
