@@ -673,7 +673,75 @@ section {
     left: 100%;
 }
 
+/* Mobile Navigation */
 @media (max-width: 768px) {
+    nav {
+        padding: 10px;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: rgba(51, 51, 51, 0.95);
+        backdrop-filter: blur(10px);
+    }
+
+    nav ul {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: rgba(51, 51, 51, 0.95);
+        flex-direction: column;
+        padding: 20px 0;
+        margin: 0;
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+
+    nav a {
+        padding: 15px 20px;
+        display: block;
+        text-align: center;
+    }
+
+    .header-logo {
+        height: 40px;
+        width: 40px;
+    }
+
+    /* Mobile Menu Button */
+    .menu-toggle {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 24px;
+        cursor: pointer;
+        z-index: 1000;
+    }
+
+    /* Home Container Mobile */
+    .home-container {
+        flex-direction: column;
+        padding: 20px;
+        margin-top: 70px;
+    }
+
+    .card {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .message-box {
+        padding: 20px;
+    }
+
+    /* Event Container Mobile */
     .event-container {
         flex-direction: column;
         padding: 20px;
@@ -681,36 +749,102 @@ section {
 
     .card-event {
         width: 100%;
-        min-height: 350px;
         margin-bottom: 20px;
+        min-height: auto;
     }
 
-    nav {
+    /* Slideshow Mobile */
+    .slideshow-container {
+        height: 400px;
+        margin: 20px auto;
+    }
+
+    .slide-caption {
+        font-size: 1rem;
         padding: 10px;
     }
 
-    .header-logo {
-        margin-left: 10px;
+    /* Newsletter Section Mobile */
+    .newsletter-section {
+        padding: 30px 20px;
     }
 
-    nav ul {
-        margin-right: 10px;
+    .newsletter-form {
+        flex-direction: column;
+    }
+
+    .form-group {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .newsletter-form input,
+    .newsletter-form button {
+        width: 100%;
+    }
+
+    /* Social Sharing Mobile */
+    .social-sharing {
+        position: fixed;
+        bottom: 80px;
+        left: 50%;
+        transform: translateX(-50%);
+        flex-direction: row;
         gap: 10px;
     }
 
-    nav a {
-        padding: 8px 15px;
+    .share-button {
+        width: 40px;
+        height: 40px;
     }
 
-    .Website-container {
-        flex-direction: column;
-        text-align: center;
-        padding: 15px;
+    /* Back to Top Button Mobile */
+    #back-to-top {
+        bottom: 140px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
     }
-    
-    .Website-container a {
-        width: 100%;
-        max-width: 200px;
+
+    /* Footer Mobile */
+    footer {
+        padding: 15px;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .social-icons {
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .footer-bottom {
+        text-align: center;
+    }
+}
+
+/* Add menu toggle button to HTML */
+.menu-toggle {
+    display: none;
+}
+
+/* Improve touch targets for mobile */
+@media (max-width: 768px) {
+    button, 
+    a, 
+    input[type="submit"] {
+        min-height: 44px;
+        min-width: 44px;
+    }
+
+    .dot {
+        width: 10px;
+        height: 10px;
+        margin: 0 5px;
+    }
+
+    .prev, .next {
+        padding: 20px;
     }
 }
 
@@ -877,23 +1011,6 @@ input:focus {
     }
     100% {
         background-position: -200% 0;
-    }
-}
-
-/* Improve mobile touch targets */
-@media (max-width: 768px) {
-    nav a {
-        padding: 15px 25px;
-    }
-    
-    .social-icons a {
-        padding: 10px;
-    }
-    
-    #back-to-top {
-        bottom: 120px; /* Increased for mobile to account for social sharing buttons */
-        width: 60px;
-        height: 60px;
     }
 }
 
