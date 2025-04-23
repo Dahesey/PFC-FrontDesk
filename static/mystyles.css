@@ -780,15 +780,16 @@ section {
 
     /* Potter's Creed Mobile Styles */
     .potter-creed {
-        gap: 8px;
+        gap: 12px;
         margin-top: 10px;
         width: 100%;
         overflow-x: hidden;
+        padding: 0 10px;
     }
 
     .creed-line {
         font-size: 0.9rem;
-        line-height: 1.4;
+        line-height: 1.6;
         padding: 0;
         margin: 0;
         width: 100%;
@@ -797,6 +798,18 @@ section {
         text-align: left;
         overflow-wrap: break-word;
         hyphens: auto;
+        display: block;
+        clear: both;
+    }
+
+    /* Fix for iOS devices */
+    @supports (-webkit-touch-callout: none) {
+        .creed-line {
+            -webkit-hyphens: auto;
+            hyphens: auto;
+            -webkit-line-break: normal;
+            line-break: normal;
+        }
     }
 
     /* Adjust spacing for mobile */
@@ -810,24 +823,6 @@ section {
 
     .card .info p {
         font-size: 1rem;
-    }
-
-    /* Fix for iOS devices */
-    @supports (-webkit-touch-callout: none) {
-        nav {
-            position: fixed;
-            -webkit-transform: translateZ(0);
-            transform: translateZ(0);
-        }
-
-        .message-box {
-            -webkit-overflow-scrolling: touch;
-        }
-
-        .creed-line {
-            -webkit-hyphens: auto;
-            hyphens: auto;
-        }
     }
 
     /* Event Container Mobile */
