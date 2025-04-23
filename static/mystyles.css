@@ -9,27 +9,30 @@
 
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 108px; /* Adjust to match navbar height */
+    scroll-padding-top: 70px; /* Adjust to match navbar height */
+    height: 100%;
 }
 
 body {
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f8f8f8;
     color: #333;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    padding-bottom: 80px; /* Add padding to prevent content from being hidden behind fixed footer */
+    position: relative;
+    overflow-x: hidden;
 }
 
 /* Header Styles */
 header {
-    height: 70px; /* Increased height */
+    height: 70px;
     display: flex;
     align-items: center;
     justify-content: center;
     background: #333;
-   
+    position: relative;
+    z-index: 1000;
 }
 
 .header-logo{
@@ -70,6 +73,7 @@ nav {
     z-index: 1000;
     position: fixed;
     top: 0;
+    left: 0;
     width: 100%;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
@@ -122,6 +126,15 @@ nav a:hover {
 nav a:hover::before {
     transform: scaleX(1);
     transform-origin: left;
+}
+
+/* Main Content */
+main {
+    flex: 1;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    padding-top: 70px; /* Add padding to account for fixed header */
 }
 
 .potter-creed {
@@ -992,6 +1005,10 @@ section {
     .footer-bottom {
         text-align: center;
     }
+
+    main {
+        padding-top: 60px;
+    }
 }
 
 /* Add menu toggle button to HTML */
@@ -1031,20 +1048,18 @@ section {
 }
 
 /* Footer Styles */
-
 footer {
     text-align: right;
     padding: 20px;
     background: #333;
     color: white;
     position: relative;
-    bottom: 0;
-    left: 0;
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 1000;
+    margin-top: auto;
 }
 
 .social-icons {
