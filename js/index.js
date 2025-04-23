@@ -151,7 +151,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 const controller = new AbortController();
                 const timeoutId = setTimeout(() => controller.abort(), 10000); // 10 second timeout
                 
-                // Replace this URL with your actual Google Apps Script deployment URL
+                // Update this URL with your Google Apps Script deployment URL
                 const response = await fetch('https://script.google.com/macros/s/AKfycbxbCZJJHMDGv9eWFOoGNhMp2pS4DT4mKwDKK72Z9DAp78yJ1wCbSA4p_Ux3LSaHcxdvdw/exec', {
                     method: 'POST',
                     mode: 'no-cors',
@@ -160,7 +160,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     },
                     body: JSON.stringify({ 
                         email: email,
-                        captchaResponse: captchaResponse
+                        captchaResponse: captchaResponse,
+                        source: 'https://dahesey.github.io/PFC-FrontDesk/'
                     }),
                     signal: controller.signal
                 });
