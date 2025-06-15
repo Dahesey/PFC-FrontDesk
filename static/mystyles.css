@@ -586,22 +586,15 @@ section {
 
 /* Slideshow container */
 .slideshow-container {
+    max-width: 100%;
     position: relative;
-    width: 100%;
-    max-width: 1500px;
-    height: auto;
+    margin: auto;
     min-height: 600px;
-    margin: 40px auto;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 20px;
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     overflow: hidden;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    will-change: transform;
-    contain: layout style paint;
+    background: var(--background-color);
 }
 
 /* Slides */
@@ -610,26 +603,23 @@ section {
     width: 100%;
     height: 100%;
     position: absolute;
-    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    top: 0;
+    left: 0;
     opacity: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    transition: opacity 0.5s ease-in-out;
 }
 
 .slides.active {
-    display: flex;
+    display: block;
     opacity: 1;
-    animation: slideIn 0.6s ease-out;
 }
 
 .slides img {
     width: 100%;
     height: 100%;
     object-fit: contain;
-    max-height: 800px;
-    content-visibility: auto;
-    contain: size layout paint;
+    display: block;
+    margin: 0 auto;
 }
 
 .slide-caption {
@@ -711,7 +701,7 @@ section {
 /* Fading animation */
 .fade {
     animation-name: fade;
-    animation-duration: 1.5s;
+    animation-duration: 0.5s;
 }
 
 .Website-container {
@@ -941,7 +931,6 @@ section {
     /* Slideshow Mobile */
     .slideshow-container {
         min-height: 400px;
-        margin: 20px auto;
     }
 
     .slide-caption {
