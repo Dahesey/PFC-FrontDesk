@@ -1,3 +1,0 @@
-User-agent: *
-Allow: /
-Sitemap: https://dahesey.github.io/PFC-FrontDesk/sitemap.xml 
