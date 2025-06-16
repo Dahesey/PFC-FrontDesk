@@ -93,7 +93,7 @@ const observerOptions = {
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            entry.target.classList.add('active');
+            entry.target.classList.add('revealed');
             observer.unobserve(entry.target);
         }
     });
@@ -104,8 +104,8 @@ document.addEventListener('DOMContentLoaded', () => {
     autoAdvance();
     
     // Observe elements for reveal animations
-    document.querySelectorAll('.card-event-content p, .creed-list li, .heading h1, .text h3, .potter-creed h3, .page-title h1, .card-event h1').forEach(element => {
-        observer.observe(element);
+    document.querySelectorAll('.card-event-content p').forEach(p => {
+        observer.observe(p);
     });
     
     document.addEventListener('visibilitychange', () => {
