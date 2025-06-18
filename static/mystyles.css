@@ -389,12 +389,29 @@ section {
     text-transform: uppercase;
 }
 
+.message-box .text {
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    width: 100%;
+}
+
 .message-box .text h3 {
-    color: black;
-    font-size: 1.5rem;
-    font-weight: bold;
-    text-shadow: 2px 2px 4px rgba(94, 6, 96, 0.2);
-    margin-top: 20px;
+    display: inline-block;
+    white-space: nowrap;
+    animation: scroll-text 12s linear infinite;
+    will-change: transform;
+    padding-left: 100%;
+    box-sizing: content-box;
+}
+
+@keyframes scroll-text {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
 }
 
 .message-box p {
