@@ -526,6 +526,7 @@ section {
 .card-event-content p {
     opacity: 1;
     animation: none;
+    font-size: 1.5rem;
 }
 
 .card-event-content p:nth-child(1) { animation-delay: 0.1s; }
