@@ -11,7 +11,7 @@ A modern, responsive website for Potters Family Chapel's front desk operations.
 
 ## Setup
 1. Clone this repository
-2. Open `welcome.html` in your browser
+2. Open `index.html` in your browser
 3. For newsletter functionality, set up Google Apps Script as described in the documentation
 
 ## Technologies Used
